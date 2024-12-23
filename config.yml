@@ -60,7 +60,7 @@ params:
     profileMode:
           enabled: true
           title: Jiasong Duan
-          subtitle: "I am a doctoral student in statistics at the University of South Carolina. My research interest variable selection, network analysis, high-dimensional analysis, and Omic analysis. I am expecting to graduate in May 2026."
+          subtitle: "I am a doctoral student in statistics at the University of South Carolina. My research interests include variable selection, network analysis, high-dimensional analysis, and Omic analysis. I am expecting to graduate in May 2026."
           imageUrl: "jiasong_duan.jpg"
           imageWidth: 175
           imageHeight: 160
