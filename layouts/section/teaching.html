@@ -1,0 +1,8 @@
+{{ define "main" }}
+<main class="container">
+  {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+  {{ with .Content }}<div class="section-intro">{{ . | safeHTML }}</div>{{ end }}
+
+  {{/* If you want to render extra structured content later, add it here. For now we just show the markdown in _index.md */}}
+</main>
+{{ end }}

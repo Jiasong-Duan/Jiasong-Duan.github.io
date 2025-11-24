@@ -1,0 +1,64 @@
+{{ define "main" }}
+<main class="container">
+  {{ with .Title }}<h1 class="section-title">{{ . }}</h1>{{ end }}
+  {{ with .Content }}<div class="section-intro">{{ . | safeHTML }}</div>{{ end }}
+
+  {{ $pages := .Pages }}
+  {{ if gt (len $pages) 0 }}
+    <div class="projects-grid">
+      {{ range sort $pages "Date" "asc" }}
+        {{/* Make sure '.' inside this range is the page */}}
+        {{ $page := . }}
+
+        <article class="project-card">
+          {{/* Choose an image URL safely from page resources or params.cover */}}
+          {{- $imgURL := "" -}}
+
+          {{- /* 1) try page bundle images safely */ -}}
+          {{- with $page.Resources.ByType "image" -}}
+            {{- if gt (len .) 0 -}}
+              {{- $first := index . 0 -}}
+              {{- if $first -}}
+                {{- $imgURL = printf "%s" $first.RelPermalink -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- /* 2) fallback to .Params.cover (ensure we convert to string) */ -}}
+          {{- if eq $imgURL "" -}}
+            {{- with $page.Params.cover -}}
+              {{- $imgURL = printf "%s" . -}}
+            {{- end -}}
+          {{- end -}}
+
+          <a class="project-cover-link" href="{{ $page.RelPermalink }}">
+            {{- if ne $imgURL "" -}}
+              <img class="project-cover" src="{{ $imgURL }}" alt="{{ $page.Title | htmlEscape }}" loading="lazy" />
+            {{- else -}}
+              <div class="project-cover placeholder"></div>
+            {{- end -}}
+          </a>
+
+          <div class="project-body">
+            <h3 class="project-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+
+            {{- with $page.Params.description -}}
+              <p class="project-asc">{{ . }}</p>
+            {{- else -}}
+              {{- with $page.Summary -}}<p class="project-asc">{{ . }}</p>{{- end -}}
+            {{- end -}}
+
+            <p class="project-meta">
+              {{- with $page.Date }}<small>{{ .Format "Jan 2006" }}</small>{{- end -}}
+              {{- with $page.Params.link }} • <a href="{{ . }}" target="_blank" rel="noopener">project link</a>{{- end -}}
+            </p>
+          </div>
+        </article>
+
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>No projects found. Add <code>index.md</code> files under <code>content/projects/</code>.</p>
+  {{ end }}
+</main>
+{{ end }}

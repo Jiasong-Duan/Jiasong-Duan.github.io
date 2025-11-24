@@ -1,6 +1,6 @@
 baseURL: "https://jiasong-duan.github.io" 
 title: Jiasong Duan
-paginate: 20
+ pagerSize = 20
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -14,27 +14,30 @@ menu:
         #- name: Books
         #  url: books/
         #  weight: 5 
-        - name: Papers
-          url: papers/
-          weight: 2
         - name: Projects
           url: projects/
-          weight: 3
+          weight: 2
         - name: Publications
           url: publications/
+          weight: 3
+        - name: Teaching
+          url: teaching/
           weight: 4
-        #- name: Courses
-        #  url: courses/
-        #  weight: 3
+        - name: CV
+          url: cv/
+          weight: 5
         #- name: Data
         #  url: data/
-        #  weight: 4 
+        #  weight: 4
         #- name: Blog
         #  url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
         #  weight: 6
 
 params:
-    description: "I am a doctoral student in statistics at the University of South Carolina. My research interest variable selection, network analysis, high-dimensional analysis, and Omic analysis. I am expecting to graduate in May 2026."
+    description: "I am a fifth year PhD student in statistics at the University of South Carolina. I am expecting to graduate in June 2026. 
+          
+          My research focuses on the analysis of high-dimensional data and of complex data, as well as on multidisciplinary collaborations. Specifically, I work on variable selection 
+          for heavy-tailed and skewed response, network estimation for non-Gaussian data, and collaborations in public health and biology. I am also interested in artificial intelligence techniques and their integration with statistical methodology."
     author: Jiasong Duan
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
@@ -60,20 +63,23 @@ params:
     profileMode:
           enabled: true
           title: Jiasong Duan
-          subtitle: "I am a doctoral student in statistics at the University of South Carolina. My research interests include variable selection, network analysis, high-dimensional analysis, and Omic analysis. I am expecting to graduate in May 2026."
+          subtitle: "I am a fifth year PhD student in statistics at the University of South Carolina. I am expecting to graduate in June 2026. 
+          
+          My research focuses on the analysis of high-dimensional data and of complex data, as well as on multidisciplinary collaborations. Specifically, I work on variable selection 
+          for heavy-tailed and skewed response, network estimation for non-Gaussian data, and collaborations in public health and biology. I am also interested in artificial intelligence techniques and their integration with statistical methodology."
           imageUrl: "jiasong_duan.jpg"
           imageWidth: 175
           imageHeight: 160
           imageTitle: 
           buttons:
-            - name: Papers
-              url: papers/
             - name: Projects
               url: projects/
             - name: Publications
               url: publications/
-            #- name: Books
-            #  url: books/
+            - name: Teaching
+              url: teaching/
+            - name: CV
+              url: cv/
             #- name: Tags
             #  url: tags/
             #- name: Archive
@@ -82,10 +88,10 @@ params:
             #  url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
-        - name: CV
-          url: cv.pdf
+        #- name: CV
+        #  url: Curriculum vitae of Jiasong Duan.pdf
         - name: Email
-          url: mailto:duan.jiasong@yahoo.com
+          url: mailto:duan.jiasong@email.sc.edu
         #- name: Zoom
         #  url: https://www.zoom.us/my/igelfeld
         #- name: Location

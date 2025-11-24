@@ -10,7 +10,7 @@
 {{- end}}
 {{- else }}
 
-{{- $images := partial "partials/templates/_funcs/get-page-images" . -}}
+{{- $images := partial "templates/_funcs/get-page-images" . -}}
 {{- range first 6 $images }}
 <meta property="og:image" content="{{ .Permalink }}" />
 {{ end -}}
@@ -42,18 +42,19 @@
 {{ end }}{{ end }}
 {{- end }}
 
-{{- /* Deprecate site.Social.facebook_admin in favor of site.Params.social.facebook_admin */}}
-{{- $facebookAdmin := "" }}
-{{- with site.Params.social }}
-  {{- if reflect.IsMap . }}
-    {{- $facebookAdmin = .facebook_admin }}
-  {{- end }}
-{{- else }}
-  {{- with site.Social.facebook_admin }}
-    {{- $facebookAdmin = . }}
-    {{- warnf "The social key in site configuration is deprecated. Use params.social.facebook_admin instead." }}
-  {{- end }}
-{{- end }}
+{{- /* Read facebook_admin from params.social (no fallback to deprecated .Site.Social) */ -}}
+{{- $facebookAdmin := "" -}}
+{{- with site.Params.social -}}
+  {{- /* If params.social is a map/object with a facebook_admin field */ -}}
+  {{- if reflect.IsMap . -}}
+    {{- $facebookAdmin = index . "facebook_admin" | default $facebookAdmin -}}
+  {{- else -}}
+    {{- /* If params.social is a plain map-like .facebook_admin access may also work */ -}}
+    {{- with index . "facebook_admin" -}}
+      {{- $facebookAdmin = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 {{- /* Facebook Page Admin ID for Domain Insights */}}
 {{ with $facebookAdmin }}<meta property="fb:admins" content="{{ . }}" />{{ end }}

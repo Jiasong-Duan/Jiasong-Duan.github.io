@@ -1,0 +1,89 @@
+{{ define "main" }}
+<main>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{/* === determine subfolder name safely === */}}
+  {{- $sub := "" -}}
+  {{- with .File -}}
+    {{- $parts := split .Dir "/" -}}
+    {{- if gt (len $parts) 1 -}}
+      {{- $sub = index $parts (sub (len $parts) 1) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq $sub "" -}}
+    {{- $rp := .RelPermalink | default "" -}}
+    {{- $rpTrim := replaceRE "^/|/$" "" $rp -}}
+    {{- $rparts := split $rpTrim "/" -}}
+    {{- if gt (len $rparts) 1 -}}
+      {{- $sub = index $rparts (sub (len $rparts) 1) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $all := site.Data.publications | default (slice) -}}
+
+  {{/* === helper: render a category list inline (no func, no define) === */}}
+
+  {{- if eq $sub "methodology" -}}
+    <section id="methodology" style="margin-bottom: 2rem;">
+      <h2>Methodology</h2>
+      {{- $list := where $all "category" "methodology" -}}
+      {{- if gt (len $list) 0 -}}
+        <ul class="publication-list">
+          {{- range sort $list "year" "desc" -}}
+            <li>{{ partial "publication-citation-apa.html" . }}</li>
+          {{- end -}}
+        </ul>
+      {{- else -}}
+        <p>No methodology publications found.</p>
+      {{- end -}}
+    </section>
+
+  {{- else if eq $sub "applications" -}}
+    <section id="applications" style="margin-top: 2rem;">
+      <h2>Applications</h2>
+      {{- $list := where $all "category" "applications" -}}
+      {{- if gt (len $list) 0 -}}
+        <ul class="publication-list">
+          {{- range sort $list "year" "desc" -}}
+            <li>{{ partial "publication-citation-apa.html" . }}</li>
+          {{- end -}}
+        </ul>
+      {{- else -}}
+        <p>No application publications found.</p>
+      {{- end -}}
+    </section>
+
+  {{- else -}}
+    {{/* fallback: show both on /research/ */}}
+    <section id="methodology" style="margin-bottom: 2rem;">
+      <h2>Methodology</h2>
+      {{- $list := where $all "category" "methodology" -}}
+      {{- if gt (len $list) 0 -}}
+        <ul class="publication-list">
+          {{- range sort $list "year" "desc" -}}
+            <li>{{ partial "publication-citation-apa.html" . }}</li>
+          {{- end -}}
+        </ul>
+      {{- else -}}
+        <p>No methodology publications found.</p>
+      {{- end -}}
+    </section>
+
+    <section id="applications" style="margin-top: 2rem;">
+      <h2>Applications</h2>
+      {{- $list := where $all "category" "applications" -}}
+      {{- if gt (len $list) 0 -}}
+        <ul class="publication-list">
+          {{- range sort $list "year" "desc" -}}
+            <li>{{ partial "publication-citation-apa.html" . }}</li>
+          {{- end -}}
+        </ul>
+      {{- else -}}
+        <p>No application publications found.</p>
+      {{- end -}}
+    </section>
+  {{- end -}}
+
+</main>
+{{ end }}

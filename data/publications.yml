@@ -1,0 +1,211 @@
+- id: jiasonginPrep1
+  title: Estimation of undirected networks under non-Gaussianity
+  authors:
+  - Duan, Jiasong
+  - Huang, Xianzheng
+  - Zhang, Hongmei
+  year: in preparation
+  venue: null
+  volume: null
+  number: null
+  pages: null
+  doi: null
+  category: methodology  
+  url: null
+  abstract: null
+  raw:
+    author+an: 1=highlight
+    keywords: preparation1
+    ENTRYTYPE: article
+- id: jiasonginPrep2
+  title: Estimating dynamic correlation of zero-inflated bivariate count data with
+    correction of measurement error
+  authors:
+  - Duan, Jiasong
+  - Huang, Xianzheng
+  year: in preparation
+  venue: null
+  volume: null
+  number: null
+  pages: null
+  doi: null
+  category: methodology
+  url: null
+  abstract: null
+  raw:
+    author+an: 1=highlight
+    keywords: preparation2
+    ENTRYTYPE: article
+- id: duan2025testing
+  title: Testing-driven Variable Selection in Bayesian Modal Regression
+  authors:
+  - Duan, Jiasong
+  - Zhang, Hongmei
+  - Huang, Xianzheng
+  year: 2025
+  venue: arXiv preprint arXiv:2510.23831
+  volume: null
+  number: null
+  pages: null
+  doi: null
+  category: methodology
+  url: https://arxiv.org/abs/2510.23831
+  abstract: null
+  raw:
+    note: Manuscript under review at {\it Statistics in Medicine}
+    author+an: 1=highlight
+    keywords: submitted1
+    ENTRYTYPE: article
+- id: zhang2025dna
+  title: DNA methylation at birth and IgE trajectories from birth to adolescence,
+    different patterns between White and Asian
+  authors:
+  - Zhang, Hongmei
+  - Duan, Jiasong
+  - Han, Luhang
+  - Alam, Naznin
+  - Ray, Meredith
+  - Yang, Fen
+  - Jiang, Yu
+  - Ewart, Susan
+  - Holloway, John W
+  - Karmaus, Wilfried
+  - others
+  year: 2025
+  venue: Epigenomics
+  volume: '17'
+  number: '4'
+  pages: 213--222
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 2=highlight
+    keywords: peerjournal
+    publisher: Taylor \& Francis
+    ENTRYTYPE: article
+- id: budu2023european
+  title: European and multi-ancestry genome-wide association meta-analysis of atopic
+    dermatitis highlights importance of systemic immune regulation
+  authors:
+  - Budu-Aggrey, Ashley
+  - '...'
+  - Duan, Jiasong
+  - '...'
+  - Paternoster, Lavinia
+  year: 2023
+  venue: Nature Communications
+  volume: '14'
+  number: '1'
+  pages: '6172'
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 3=highlight
+    keywords: peerjournal
+    publisher: Nature Publishing Group UK London
+    ENTRYTYPE: article
+- id: han2021dna
+  title: DNA methylation at birth is associated with childhood serum immunoglobulin
+    E levels
+  authors:
+  - Han, Luhang
+  - Kaushal, Akhilesh
+  - Zhang, Hongmei
+  - Kadalayil, Latha
+  - Duan, Jiasong
+  - Holloway, John W
+  - Karmaus, Wilfried
+  - Banerjee, Pratik
+  - Tsai, Shih-Fen
+  - Wen, Hui-Ju
+  - Arshad, S Hasan
+  - Wang, Shu-Li
+  year: 2021
+  venue: Epigenetics Insights
+  volume: '14'
+  number: null
+  pages: '25168657211008108'
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 5=highlight
+    keywords: peerjournal
+    publisher: 'SAGE Publications Sage UK: London, England'
+    ENTRYTYPE: article
+- id: rathod2021methylation
+  title: Methylation of host genes associated with coronavirus infection from birth
+    to 26 years
+  authors:
+  - Rathod, Rutu
+  - Rathod, Aniruddha
+  - Rahimabad, Parnian Kheirkhah
+  - Duan, Jiasong
+  - Zhang, Hongmei
+  - Arshad, S Hasan
+  - Karmaus, Wilfried
+  year: 2021
+  venue: Genes
+  volume: '12'
+  number: '8'
+  pages: '1198'
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 4=highlight
+    keywords: peerjournal
+    publisher: MDPI
+    ENTRYTYPE: article
+- id: rathod2020interweaving
+  title: Interweaving between genetic and epigenetic studies on childhood asthma
+  authors:
+  - Rathod, Aniruddha
+  - Duan, Jiasong
+  - Zhang, Hongmei
+  - Holloway, John W
+  - Ewart, Susan
+  - Arshad, S Hasan
+  - Karmaus, Wilfried
+  year: 2020
+  venue: Epigenetics insights
+  volume: '13'
+  number: null
+  pages: '2516865720923395'
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 1=first; 2=first, highlight
+    keywords: peerjournal
+    publisher: 'SAGE Publications Sage UK: London, England'
+    ENTRYTYPE: article
+- id: yu2020distinctive
+  title: 'Distinctive trajectories of the COVID-19 epidemic by age and gender: A retrospective
+    modeling of the epidemic in South Korea'
+  authors:
+  - Yu, Xinhua
+  - Duan, Jiasong
+  - Jiang, Yu
+  - Zhang, Hongmei
+  year: 2020
+  venue: International Journal of Infectious Diseases
+  volume: '98'
+  number: null
+  pages: 200--205
+  doi: null
+  category: applications
+  url: null
+  abstract: null
+  raw:
+    author+an: 2=highlight
+    keywords: peerjournal
+    publisher: Elsevier
+    ENTRYTYPE: article

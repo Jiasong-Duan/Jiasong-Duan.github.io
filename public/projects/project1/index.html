@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Project 1. Testing-driven Variable Selection in Bayesian Modal Regression | Jiasong Duan pagerSize = 20</title>
+<meta name="keywords" content="expectation-maximization algorithm, heavy-tailed distribution, LASSO, modal regression, permutation, spike-and-slab prior">
+<meta name="description" content="This project proposed a Bayesian parametric modal regression framework to perform variable selection for heavy-tailed and skewed response data.">
+<meta name="author" content="Jiasong Duan,&thinsp;Hongmei Zhang,&thinsp;Xianzheng Huang">
+<link rel="canonical" href="https://jiasong-duan.github.io/projects/project1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6cf4a8fa527330d9574f36d8d000fdaf90ca838ff09ab72fc27d3cb7ca1ddc5.css" integrity="sha256-1s9Kj6UnMw2VdPNtjQAP2vkMqDj/Caty/CfTy3yh3cU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jiasong-duan.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jiasong-duan.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jiasong-duan.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jiasong-duan.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://jiasong-duan.github.io/projects/project1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Project 1. Testing-driven Variable Selection in Bayesian Modal Regression" />
+<meta property="og:description" content="This project proposed a Bayesian parametric modal regression framework to perform variable selection for heavy-tailed and skewed response data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jiasong-duan.github.io/projects/project1/" />
+<meta property="og:image" content="https://jiasong-duan.github.io/paper1.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2025-10-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-10-25T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://jiasong-duan.github.io/paper1.png" />
+<meta name="twitter:title" content="Project 1. Testing-driven Variable Selection in Bayesian Modal Regression"/>
+<meta name="twitter:description" content="This project proposed a Bayesian parametric modal regression framework to perform variable selection for heavy-tailed and skewed response data."/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://jiasong-duan.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Project 1. Testing-driven Variable Selection in Bayesian Modal Regression",
+      "item": "https://jiasong-duan.github.io/projects/project1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Project 1. Testing-driven Variable Selection in Bayesian Modal Regression",
+  "name": "Project 1. Testing-driven Variable Selection in Bayesian Modal Regression",
+  "description": "This project proposed a Bayesian parametric modal regression framework to perform variable selection for heavy-tailed and skewed response data.",
+  "keywords": [
+    "expectation-maximization algorithm", "heavy-tailed distribution", "LASSO", "modal regression", "permutation", "spike-and-slab prior"
+  ],
+  "articleBody": "\rDownload Paper\rR package (TDVS)\rAbstract This project proposed a Bayesian variable selection method in the framework of modal regression for heavy-tailed and skewed responses. A test statistic is constructed to exploit the shape of the model error distribution to effectively separate informative covariates from unimportant ones. The computational cost is controlled by employing an efficient expectation-maximization algorithm for parameter estimation.\nFigure 1: Examples of distributions exhibiting light tails and symmetry, heavy tails and asymmetry, and heavy tails with skewness. Citation Duan, J., Zhang, H., \u0026 Huang, X. (2025). Testing-driven Variable Selection in Bayesian Modal Regression. arXiv preprint arXiv:2510.23831.\n@article{duan2025testing, title={Testing-driven Variable Selection in Bayesian Modal Regression}, author={Duan, Jiasong and Zhang, Hongmei and Huang, Xianzheng}, journal={arXiv preprint arXiv:2510.23831}, year={2025} } ",
+  "wordCount" : "120",
+  "inLanguage": "en",
+  "image":"https://jiasong-duan.github.io/paper1.png","datePublished": "2025-10-25T00:00:00Z",
+  "dateModified": "2025-10-25T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jiasong Duan"
+  }, {
+    "@type": "Person",
+    "name": "Hongmei Zhang"
+  }, {
+    "@type": "Person",
+    "name": "Xianzheng Huang"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jiasong-duan.github.io/projects/project1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jiasong Duan pagerSize = 20",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jiasong-duan.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jiasong-duan.github.io/" accesskey="h" title="Jiasong Duan">
+                <img src="https://jiasong-duan.github.io/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Jiasong Duan</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jiasong-duan.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jiasong-duan.github.io/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jiasong-duan.github.io/teaching/" title="Teaching">
+                    <span>Teaching</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jiasong-duan.github.io/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Project 1. Testing-driven Variable Selection in Bayesian Modal Regression
+    </h1>
+    <div class="post-meta"><span title='2025-10-25 00:00:00 +0000 UTC'>October 2025</span>&nbsp;&middot;&nbsp;Jiasong Duan,&thinsp;Hongmei Zhang,&thinsp;Xianzheng Huang
+
+</div>
+  </header> 
+  <div class="post-content"><!--
+editPost:
+    URL: "https://github.com/pmichaillat/hugo-website"
+    Text: "Journal of Oleic Science"
+-->
+<hr>
+<h5 id="download">Download</h5>
+<ul>
+<li><a href="https://arxiv.org/abs/2510.23831" target="_blank">Paper</a>
+</li>
+</ul>
+<!-- + [Online appendix](appendix1.pdf) -->
+<ul>
+<li><a href="https://github.com/Jiasong-Duan/TDVS" target="_blank">R package (TDVS)</a>
+</li>
+</ul>
+<hr>
+<h5 id="abstract">Abstract</h5>
+<p>This project proposed a Bayesian variable selection method in the framework of modal regression for heavy-tailed and skewed responses. A test statistic is constructed to exploit the shape of the model error distribution to effectively separate informative covariates from unimportant ones. The computational cost is controlled by employing an efficient expectation-maximization algorithm for parameter estimation.</p>
+<hr>
+<h5 id="figure-1-examples-of-distributions-exhibiting-light-tails-and-symmetry-heavy-tails-and-asymmetry-and-heavy-tails-with-skewness">Figure 1: Examples of distributions exhibiting light tails and symmetry, heavy tails and asymmetry, and heavy tails with skewness.</h5>
+<p><img loading="lazy" src="paper1.png" alt=""  />
+</p>
+<hr>
+<h5 id="citation">Citation</h5>
+<p>Duan, J., Zhang, H., &amp; Huang, X. (2025). Testing-driven Variable Selection in Bayesian Modal Regression. arXiv preprint arXiv:2510.23831.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@article</span>{duan2025testing,
+</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">title</span>=<span style="color:#a50">{Testing-driven Variable Selection in Bayesian Modal Regression}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">author</span>=<span style="color:#a50">{Duan, Jiasong and Zhang, Hongmei and Huang, Xianzheng}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">journal</span>=<span style="color:#a50">{arXiv preprint arXiv:2510.23831}</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">year</span>=<span style="color:#a50">{2025}</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<!-- ##### Related material
+
++ [Presentation slides](presentation1.pdf)
++ [Summary of the paper](https://www.penguinrandomhouse.com/books/110403/unusual-uses-for-olive-oil-by-alexander-mccall-smith/) -->
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jiasong-duan.github.io/tags/expectation-maximization-algorithm/">Expectation-Maximization Algorithm</a></li>
+      <li><a href="https://jiasong-duan.github.io/tags/heavy-tailed-distribution/">Heavy-Tailed Distribution</a></li>
+      <li><a href="https://jiasong-duan.github.io/tags/lasso/">LASSO</a></li>
+      <li><a href="https://jiasong-duan.github.io/tags/modal-regression/">Modal Regression</a></li>
+      <li><a href="https://jiasong-duan.github.io/tags/permutation/">Permutation</a></li>
+      <li><a href="https://jiasong-duan.github.io/tags/spike-and-slab-prior/">Spike-and-Slab Prior</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

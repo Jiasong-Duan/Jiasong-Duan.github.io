@@ -1,0 +1,150 @@
+{{/* layouts/partials/publication-citation-apa.html
+   Defensive APA-like citation renderer:
+   - No 'func' usage anywhere
+   - '*' added after co-first authors (from raw["author+an"] with N=first)
+   - bold only the =highlight index
+   - appends parenthetical "(Co-first authors: ...)" if any
+*/}}
+
+{{- $p := . -}}
+
+{{/* --- Parse raw["author+an"] for co-first indices and highlight index --- */}}
+{{- $highlightIndex := -1 -}}
+{{- $coFirstIdxs := slice -}}   {{/* zero-based indices */}}
+{{- with $p.raw -}}
+  {{- $val := index . "author+an" | default "" -}}
+  {{- if ne (printf "%v" $val) "" -}}
+    {{- $txt := printf "%v" $val -}}
+    {{- /* collect all N=first matches */ -}}
+    {{- $firstMatches := findRE `(\d+)=first` $txt -}}
+    {{- range $fm := $firstMatches -}}
+      {{- $numOnly := index (findRE `\d+` $fm) 0 -}}
+      {{- if ne $numOnly "" -}}
+        {{- $coFirstIdxs = $coFirstIdxs | append (sub (int $numOnly) 1) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- /* first highlight if any */ -}}
+    {{- $highlightMatches := findRE `(\d+)=highlight` $txt -}}
+    {{- if gt (len $highlightMatches) 0 -}}
+      {{- $numOnly := index (findRE `\d+` (index $highlightMatches 0)) 0 -}}
+      {{- if ne $numOnly "" -}}
+        {{- $highlightIndex = sub (int $numOnly) 1 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* --- Build formatted authors array (Last, F. M.) applying '*' and bolding --- */}}
+{{- $authorsFmt := slice -}}
+{{- $coFirstNames := slice -}}  {{/* store plain formatted names for parenthetical note */}}
+{{- $authors := $p.authors | default (slice) -}}
+{{- range $i, $a := $authors -}}
+  {{- $nameRaw := printf "%v" $a -}}
+  {{- $nameTrim := replaceRE "(?m)^[\\s]+|[\\s]+$" "" $nameRaw -}}
+
+  {{- /* ensure $fmt exists for this loop */ -}}
+  {{- $fmt := "" -}}
+
+  {{- /* format into "Last, F. M." handling "Last, Given" and "Given Last" */ -}}
+  {{- if findRE "," $nameTrim -}}
+    {{- $parts := split $nameTrim "," -}}
+    {{- $last := replaceRE "(?m)^[\\s]+|[\\s]+$" "" (index $parts 0) -}}
+    {{- $givenRaw := replaceRE "(?m)^[\\s]+|[\\s]+$" "" (index $parts 1) -}}
+    {{- $givenParts := split $givenRaw " " -}}
+    {{- $initials := slice -}}
+    {{- range $gp := $givenParts -}}
+      {{- if ne $gp "" -}}
+        {{- $initials = $initials | append (printf "%s." (upper (substr $gp 0 1))) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $fmt = printf "%s, %s" $last (delimit $initials " ") -}}
+  {{- else -}}
+    {{- $parts := split $nameTrim " " -}}
+    {{- $n := len $parts -}}
+    {{- if gt $n 1 -}}
+      {{- $last := index $parts (sub $n 1) -}}
+      {{- $givenParts := slice $parts 0 (sub $n 1) -}}
+      {{- $initials := slice -}}
+      {{- range $gp := $givenParts -}}
+        {{- if ne $gp "" -}}
+          {{- $initials = $initials | append (printf "%s." (upper (substr $gp 0 1))) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $fmt = printf "%s, %s" $last (delimit $initials " ") -}}
+    {{- else -}}
+      {{- $fmt = $nameTrim -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* keep the plain formatted name (no HTML) for note */ -}}
+  {{- $coFirstNames = $coFirstNames | append $fmt -}}
+
+  {{- /* add '*' for co-first authors */ -}}
+  {{- $marked := $fmt -}}
+  {{- if in $coFirstIdxs $i -}}
+    {{- $marked = printf "%s*" $marked -}}
+  {{- end -}}
+
+  {{- /* bold only the highlight index */ -}}
+  {{- if eq $i $highlightIndex -}}
+    {{- $marked = printf "<strong>%s</strong>" $marked -}}
+  {{- end -}}
+
+  {{- $authorsFmt = $authorsFmt | append $marked -}}
+{{- end -}}
+
+{{/* --- Join authors APA-style into one string --- */}}
+{{- $nAuthors := len $authorsFmt -}}
+{{- $authStr := "" -}}
+{{- if eq $nAuthors 0 -}}
+  {{- $authStr = "" -}}
+{{- else if eq $nAuthors 1 -}}
+  {{- $authStr = index $authorsFmt 0 -}}
+{{- else if eq $nAuthors 2 -}}
+  {{- $authStr = printf "%s & %s" (index $authorsFmt 0) (index $authorsFmt 1) -}}
+{{- else -}}
+  {{- $firsts := slice -}}
+  {{- range $i, $af := $authorsFmt -}}
+    {{- if lt $i (sub $nAuthors 1) -}}
+      {{- $firsts = $firsts | append $af -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $authStr = printf "%s, & %s" (delimit $firsts ", ") (index $authorsFmt (sub $nAuthors 1)) -}}
+{{- end -}}
+
+{{/* --- Sentence-case title safely --- */}}
+{{- $titleRaw := $p.title | default "" -}}
+{{- $title := printf "%v" $titleRaw -}}
+{{- $titleLower := lower $title -}}
+{{- if gt (len $titleLower) 0 -}}
+  {{- $first := substr $titleLower 0 1 -}}
+  {{- $rest := "" -}}
+  {{- if gt (len $titleLower) 1 -}}
+    {{- $rest = substr $titleLower 1 (sub (len $titleLower) 1) -}}
+  {{- end -}}
+  {{- $title = printf "%s%s" (upper $first) $rest -}}
+{{- end -}}
+
+{{/* --- Render citation --- */}}
+<span class="pub-authors">{{- if ne $authStr "" -}}{{ $authStr | safeHTML }}.{{- end -}}</span>
+{{- with $p.year -}} <span class="pub-year">({{ . }}).</span>{{- else -}} <span class="pub-year">(n.d.).</span>{{- end -}}
+{{- if ne $title "" -}} <span class="pub-title"> {{ $title | safeHTML }}.</span>{{- end -}}
+{{- with $p.venue -}} <span class="pub-venue"> <em>{{ . }}</em></span>{{- end -}}
+{{- if $p.volume -}} <span class="pub-volume">, <em>{{ $p.volume }}</em></span>{{- end -}}
+{{- if $p.number -}} <span class="pub-issue">({{ $p.number }})</span>{{- end -}}
+{{- if $p.pages -}} <span class="pub-pages">, {{ $p.pages }}.</span>{{- else }}<span>.</span>{{- end -}}
+{{- if $p.doi -}} <span class="pub-doi"> https://doi.org/{{ $p.doi }}</span>{{- else if $p.url -}} <span class="pub-url"> <a href="{{ $p.url }}">{{ $p.url }}</a></span>{{- end -}}
+
+{{/* --- Append parenthetical co-first note if present --- */}}
+{{- if gt (len $coFirstIdxs) 0 -}}
+  {{- $names := slice -}}
+  {{- range $j := $coFirstIdxs -}}
+    {{- $idx := int $j -}}
+    {{- if and (ge $idx 0) (lt $idx (len $coFirstNames)) -}}
+      {{- $names = $names | append (index $coFirstNames $idx) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if gt (len $names) 0 -}}
+    <span class="pub-cofirst"> <em>({{ printf "Co-first authors: %s" (delimit $names "; ") }})</em></span>
+  {{- end -}}
+{{- end -}}

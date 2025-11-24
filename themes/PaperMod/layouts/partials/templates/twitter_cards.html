@@ -6,7 +6,7 @@
 <meta name="twitter:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}" />
 {{- end}}
 {{- else }}
-{{- $images := partial "partials/templates/_funcs/get-page-images" . -}}
+{{- $images := partial "templates/_funcs/get-page-images" . -}}
 {{- with index $images 0 -}}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="{{ .Permalink }}" />
@@ -16,23 +16,23 @@
 {{- end }}
 <meta name="twitter:title" content="{{ .Title }}"/>
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
-{{- /* Deprecate site.Social.twitter in favor of site.Params.social.twitter */}}
-{{- $twitterSite := "" }}
-{{- with site.Params.social }}
-  {{- if reflect.IsMap . }}
-    {{- $twitterSite = .twitter }}
-  {{- end }}
-{{- else }}
-  {{- with site.Social.twitter }}
-    {{- $twitterSite = . }}
-    {{- warnf "The social key in site configuration is deprecated. Use params.social.twitter instead." }}
-  {{- end }}
-{{- end }}
+{{- /* Read twitter handle from params.social only (no fallback to removed .Site.Social) */ -}}
+{{- $twitterSite := "" -}}
+{{- with site.Params.social -}}
+  {{- /* params.social may be a map/object or a keyed map */ -}}
+  {{- if reflect.IsMap . -}}
+    {{- $twitterSite = index . "twitter" | default $twitterSite -}}
+  {{- else -}}
+    {{- with index . "twitter" -}}
+      {{- $twitterSite = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{- with $twitterSite }}
-  {{- $content := . }}
-  {{- if not (strings.HasPrefix . "@") }}
-    {{- $content = printf "@%v" $twitterSite }}
-  {{- end }}
+{{- with $twitterSite -}}
+  {{- $content := $twitterSite -}}
+  {{- if not (strings.HasPrefix $twitterSite "@") -}}
+    {{- $content = printf "@%v" $twitterSite -}}
+  {{- end -}}
 <meta name="twitter:site" content="{{ $content }}"/>
-{{- end }}
+{{- end -}}
