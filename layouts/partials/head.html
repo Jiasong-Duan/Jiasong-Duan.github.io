@@ -33,7 +33,7 @@
 {{- end -}}
 {{- /* collapse whitespace, trim edges, escape double quotes */ -}}
 {{- $desc = $desc | replaceRE `\s+` " " | replaceRE `(^\s+|\s+$)` "" | replace `"` "&quot;" -}}
-<meta name="description" content="{{ $desc }}">
+<meta name="description" content="{{ partial "meta-desc.html" . }}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 

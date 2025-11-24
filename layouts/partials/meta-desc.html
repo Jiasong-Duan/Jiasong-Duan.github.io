@@ -1,0 +1,22 @@
+{{- /* layouts/partials/meta-desc.html
+   Returns a safe single-line description suitable for meta/og/twitter attributes.
+   Usage: partial "meta-desc.html" . 
+*/ -}}
+{{- $desc := "" -}}
+{{- with .Description -}}
+  {{- $desc = . -}}
+{{- else -}}
+  {{- if or .IsPage .IsSection -}}
+    {{- $desc = (.Summary | default (printf "%s - %s" .Title site.Title)) -}}
+  {{- else -}}
+    {{- with site.Params.description -}}
+      {{- $desc = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* collapse whitespace, trim edges, escape double quotes */ -}}
+{{- $desc = $desc | replaceRE `\s+` " " | replaceRE `(^\s+|\s+$)` "" | replace `"` "&quot;" -}}
+
+{{- /* output string (no HTML escaping here because we've already escaped double quotes) */ -}}
+{{- printf "%s" $desc -}}
