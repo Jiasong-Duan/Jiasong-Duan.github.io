@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Permutation on Jiasong Duan pagerSize = 20</title>
-    <link>http://localhost:1313/tags/permutation/</link>
+    <link>https://jiasong-duan.github.io/tags/permutation/</link>
     <description>Recent content in Permutation on Jiasong Duan pagerSize = 20</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 25 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/permutation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jiasong-duan.github.io/tags/permutation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 1. Testing-driven Variable Selection in Bayesian Modal Regression</title>
-      <link>http://localhost:1313/projects/project1/</link>
+      <link>https://jiasong-duan.github.io/projects/project1/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project1/</guid>
+      <guid>https://jiasong-duan.github.io/projects/project1/</guid>
       <description>This project proposed a Bayesian parametric modal regression framework to perform variable selection for heavy-tailed and skewed response data.</description>
     </item>
   </channel>
