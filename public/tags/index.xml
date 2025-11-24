@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Jiasong Duan</title>
-    <link>https://jiasong-duan.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Jiasong Duan</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jiasong-duan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conditional Dependence</title>
-      <link>https://jiasong-duan.github.io/tags/conditional-dependence/</link>
+      <link>http://localhost:1313/tags/conditional-dependence/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/conditional-dependence/</guid>
+      <guid>http://localhost:1313/tags/conditional-dependence/</guid>
       <description></description>
     </item>
     <item>
       <title>Network Comparison</title>
-      <link>https://jiasong-duan.github.io/tags/network-comparison/</link>
+      <link>http://localhost:1313/tags/network-comparison/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/network-comparison/</guid>
+      <guid>http://localhost:1313/tags/network-comparison/</guid>
       <description></description>
     </item>
     <item>
       <title>Non-Gaussian Data</title>
-      <link>https://jiasong-duan.github.io/tags/non-gaussian-data/</link>
+      <link>http://localhost:1313/tags/non-gaussian-data/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/non-gaussian-data/</guid>
+      <guid>http://localhost:1313/tags/non-gaussian-data/</guid>
       <description></description>
     </item>
     <item>
       <title>Undirected Network</title>
-      <link>https://jiasong-duan.github.io/tags/undirected-network/</link>
+      <link>http://localhost:1313/tags/undirected-network/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/undirected-network/</guid>
+      <guid>http://localhost:1313/tags/undirected-network/</guid>
       <description></description>
     </item>
     <item>
       <title>Glasso</title>
-      <link>https://jiasong-duan.github.io/tags/glasso/</link>
+      <link>http://localhost:1313/tags/glasso/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/glasso/</guid>
+      <guid>http://localhost:1313/tags/glasso/</guid>
       <description></description>
     </item>
     <item>
       <title>Nonparanormal</title>
-      <link>https://jiasong-duan.github.io/tags/nonparanormal/</link>
+      <link>http://localhost:1313/tags/nonparanormal/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/nonparanormal/</guid>
+      <guid>http://localhost:1313/tags/nonparanormal/</guid>
       <description></description>
     </item>
     <item>
       <title>Expectation-Maximization Algorithm</title>
-      <link>https://jiasong-duan.github.io/tags/expectation-maximization-algorithm/</link>
+      <link>http://localhost:1313/tags/expectation-maximization-algorithm/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/expectation-maximization-algorithm/</guid>
+      <guid>http://localhost:1313/tags/expectation-maximization-algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Heavy-Tailed Distribution</title>
-      <link>https://jiasong-duan.github.io/tags/heavy-tailed-distribution/</link>
+      <link>http://localhost:1313/tags/heavy-tailed-distribution/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/heavy-tailed-distribution/</guid>
+      <guid>http://localhost:1313/tags/heavy-tailed-distribution/</guid>
       <description></description>
     </item>
     <item>
       <title>LASSO</title>
-      <link>https://jiasong-duan.github.io/tags/lasso/</link>
+      <link>http://localhost:1313/tags/lasso/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/lasso/</guid>
+      <guid>http://localhost:1313/tags/lasso/</guid>
       <description></description>
     </item>
     <item>
       <title>Modal Regression</title>
-      <link>https://jiasong-duan.github.io/tags/modal-regression/</link>
+      <link>http://localhost:1313/tags/modal-regression/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/modal-regression/</guid>
+      <guid>http://localhost:1313/tags/modal-regression/</guid>
       <description></description>
     </item>
     <item>
       <title>Permutation</title>
-      <link>https://jiasong-duan.github.io/tags/permutation/</link>
+      <link>http://localhost:1313/tags/permutation/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/permutation/</guid>
+      <guid>http://localhost:1313/tags/permutation/</guid>
       <description></description>
     </item>
     <item>
       <title>Spike-and-Slab Prior</title>
-      <link>https://jiasong-duan.github.io/tags/spike-and-slab-prior/</link>
+      <link>http://localhost:1313/tags/spike-and-slab-prior/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/tags/spike-and-slab-prior/</guid>
+      <guid>http://localhost:1313/tags/spike-and-slab-prior/</guid>
       <description></description>
     </item>
   </channel>

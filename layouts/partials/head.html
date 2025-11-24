@@ -18,20 +18,22 @@
     {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
 {{- end }}
-{{- /* build a stable one-line description for the meta tag */ -}}
+{{- /* Robust single-line meta description */ -}}
 {{- $desc := "" -}}
 {{- with .Description -}}
   {{- $desc = . -}}
 {{- else -}}
   {{- if or .IsPage .IsSection -}}
-    {{- $desc = .Summary | default (printf "%s - %s" .Title site.Title) -}}
+    {{- $desc = (.Summary | default (printf "%s - %s" .Title site.Title)) -}}
   {{- else -}}
     {{- with site.Params.description -}}
       {{- $desc = . -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-<meta name="description" content="{{ $desc | replaceRE `\s+` " " }}">
+{{- /* collapse whitespace, trim edges, escape double quotes */ -}}
+{{- $desc = $desc | replaceRE `\s+` " " | replaceRE `(^\s+|\s+$)` "" | replace `"` "&quot;" -}}
+<meta name="description" content="{{ $desc }}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 

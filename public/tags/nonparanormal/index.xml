@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nonparanormal on Jiasong Duan</title>
-    <link>https://jiasong-duan.github.io/tags/nonparanormal/</link>
+    <link>http://localhost:1313/tags/nonparanormal/</link>
     <description>Recent content in Nonparanormal on Jiasong Duan</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jiasong-duan.github.io/tags/nonparanormal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/nonparanormal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 2. Undirected network estimation beyond Gaussianity</title>
-      <link>https://jiasong-duan.github.io/projects/project2/</link>
+      <link>http://localhost:1313/projects/project2/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/projects/project2/</guid>
+      <guid>http://localhost:1313/projects/project2/</guid>
       <description>This project proposed a method for estimating undirected network for non-gaussian data.</description>
     </item>
   </channel>

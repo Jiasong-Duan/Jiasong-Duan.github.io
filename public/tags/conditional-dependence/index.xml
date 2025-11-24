@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Conditional Dependence on Jiasong Duan</title>
-    <link>https://jiasong-duan.github.io/tags/conditional-dependence/</link>
+    <link>http://localhost:1313/tags/conditional-dependence/</link>
     <description>Recent content in Conditional Dependence on Jiasong Duan</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jiasong-duan.github.io/tags/conditional-dependence/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/conditional-dependence/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 3. Network differentiation for non-Gaussian data</title>
-      <link>https://jiasong-duan.github.io/projects/project3/</link>
+      <link>http://localhost:1313/projects/project3/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/projects/project3/</guid>
+      <guid>http://localhost:1313/projects/project3/</guid>
       <description>This project proposed a method for network differentiation under non-Gaussian data distributions.</description>
     </item>
     <item>
       <title>Project 2. Undirected network estimation beyond Gaussianity</title>
-      <link>https://jiasong-duan.github.io/projects/project2/</link>
+      <link>http://localhost:1313/projects/project2/</link>
       <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://jiasong-duan.github.io/projects/project2/</guid>
+      <guid>http://localhost:1313/projects/project2/</guid>
       <description>This project proposed a method for estimating undirected network for non-gaussian data.</description>
     </item>
   </channel>
