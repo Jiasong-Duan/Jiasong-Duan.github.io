@@ -35,11 +35,9 @@ menu:
 
 params:
     description: |
-        I am a fifth-year Ph.D. student in statistics at the University of South Carolina. I am expecting to graduate in June 2026.
+        <p>I am a fifth-year Ph.D. student in statistics at the University of South Carolina. I am expecting to graduate in June 2026.</p>
 
-
-        My research focuses on the analysis of high-dimensional data and complex data, as well as on multidisciplinary collaborations. Specifically, I work on variable selection
-        for heavy-tailed and skewed responses, network estimation for non-Gaussian data, and collaborations in public health and biology. I am also interested in artificial intelligence techniques and their integration with statistical methodology.
+        <p>My research focuses on the analysis of high-dimensional data and complex data, as well as on multidisciplinary collaborations. ...</p>
     author: Jiasong Duan
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
