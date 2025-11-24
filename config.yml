@@ -1,6 +1,5 @@
 baseURL: "https://jiasong-duan.github.io" 
 title: Jiasong Duan
- pagerSize = 20
 theme: PaperMod
 
 enableInlineShortcodes: true
